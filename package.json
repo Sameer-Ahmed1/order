@@ -1,0 +1,19 @@
+{
+  "name": "order",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sameer-Ahmed1/order.git"
+  },
+  "author": "Sameer-ahmed1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sameer-Ahmed1/order/issues"
+  },
+  "homepage": "https://github.com/Sameer-Ahmed1/order#readme"
+}
