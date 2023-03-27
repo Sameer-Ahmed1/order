@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Sameer-Ahmed1/order/issues"
   },
-  "homepage": "https://github.com/Sameer-Ahmed1/order#readme"
+  "homepage": "https://github.com/Sameer-Ahmed1/order#readme",
+  "dependencies": {
+    "mongoose": "^6.10.4"
+  }
 }
