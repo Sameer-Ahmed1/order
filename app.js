@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const config = require("./utils/config");
 const orderRouter = require("./controllers/order");
+const middleware = require("./utils/middleware");
 mongoose.set("strictQuery", false);
 mongoose
   .connect(config.MONGODB_URI)
@@ -17,4 +18,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/orders", orderRouter);
+app.use(middleware.errorHandler);
+app.use(middleware.unknownEndpoint);
 module.exports = app;

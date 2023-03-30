@@ -1,19 +1,34 @@
 const mongoose = require("mongoose");
 
 const Package = new mongoose.Schema({
-  length: Number,
-  breadth: Number,
-  height: Number,
-  weight: Number,
-  items: {
-    type: [
-      {
-        name: String,
-        quantity: Number,
-      },
-    ],
+  length: {
+    type: Number,
     required: true,
   },
+  breadth: {
+    type: Number,
+    required: true,
+  },
+  height: {
+    type: Number,
+    required: true,
+  },
+  weight: {
+    type: Number,
+    required: true,
+  },
+  items: [
+    {
+      name: {
+        type: String,
+        required: true,
+      },
+      quantity: {
+        type: Number,
+        required: true,
+      },
+    },
+  ],
 });
 
 const Trip = new mongoose.Schema({
@@ -21,8 +36,14 @@ const Trip = new mongoose.Schema({
     type: String,
     required: true,
   },
-  startLocationCoordinates: String,
-  endLocationCoordinates: String,
+  startLocationCoordinates: {
+    type: String,
+    required: true,
+  },
+  endLocationCoordinates: {
+    type: String,
+    required: true,
+  },
   tripStatus: {
     type: String,
     enum: [
@@ -41,14 +62,27 @@ const orderSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  senderCoordinates: String, // eg. '28.361136640146 N, 81.5087592601776 W'
+  senderCoordinates: {
+    type: String, // eg. '28.361136640146 N, 81.5087592601776 W'
+    required: true,
+  },
   recipientName: {
     type: String,
     required: true,
   },
-  recipientCoordinates: String,
-  packages: { type: [Package], required: true },
-  trips: { type: [Trip], required: true },
+  recipientCoordinates: {
+    type: String,
+    required: true,
+  },
+  packages: {
+    type: [Package],
+    required: true,
+    validate: [(val) => val.length >= 1, "Must have minimum one package"],
+  },
+  trips: {
+    type: [Trip],
+    required: true,
+  },
 });
 
 orderSchema.set("toJSON", {
