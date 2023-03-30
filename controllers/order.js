@@ -14,7 +14,6 @@ orderRouter.get("/status/:id", async (request, response, next) => {
     const id = request.params.id;
     let orderFound = await Order.findById(id);
     orderFound = orderFound.toJSON();
-    console.log(orderFound);
     if (orderFound) {
       const trips = orderFound.trips;
       const responseData = helper.getOrderStatus(trips);
