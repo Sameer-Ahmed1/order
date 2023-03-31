@@ -6,13 +6,13 @@ baseUrl: https://order-service-6zhy.onrender.com
 
 # API to create an order
 
-`baseUr/api/orders`
+`baseUrl/api/orders`
 
 It is done using the post method (to '/api/orders') of the express libray while passing the order json as body in request object
 
 # Api to get status
 
-`baseUr/api/orders/status/:id`
+`baseUrl/api/orders/status/:id`
 
 It is done using get method (to '/api/orders/status/:id' ) of the express library while passing the id as paramater
 
