@@ -32,7 +32,11 @@ flowchart TB
     c --> false --> m[orderStatus: delivered] --> f
     c --> true  --> ct
 ```
-
 # Demonstration of APIs using postman
 
-<video src='"C:\Sameer\videos\31.03.2023_17.32.52_REC.mp4"' width=180></video>
+https://user-images.githubusercontent.com/97391681/229117197-946485f9-28f8-43fd-bf00-7ab623a15f18.mp4
+
+
+
+
+
